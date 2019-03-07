@@ -193,7 +193,7 @@ func handleFlightDataSearchShow(w http.ResponseWriter, r *http.Request) {
       http.Redirect(w, r, newUrl, http.StatusSeeOther)
     }
     if flightdata.Airport != "" {
-      results, err := db.Query("SELECT msn FROM flightdata where Airport = ?", "msn", flightdata.Airport)
+      results, err := db.Query("SELECT msn FROM flightdata where Airport = ?", flightdata.Airport)
       if err != nil {
         log.Fatalln(err)
       }
@@ -205,7 +205,7 @@ func handleFlightDataSearchShow(w http.ResponseWriter, r *http.Request) {
       http.Redirect(w, r, newUrl, http.StatusSeeOther)
     }
     if flightdata.Fuel_cap_r != "" {
-      results, err := db.Query("SELECT msn FROM flightdata where Fuel_cap_r = ?", "msn", flightdata.Fuel_cap_r)
+      results, err := db.Query("SELECT msn FROM flightdata where Fuel_cap_r = ?", flightdata.Fuel_cap_r)
       if err != nil {
         log.Fatalln(err)
       }
@@ -217,7 +217,7 @@ func handleFlightDataSearchShow(w http.ResponseWriter, r *http.Request) {
       http.Redirect(w, r, newUrl, http.StatusSeeOther)
     }
     if flightdata.Fuel_cap_l != "" {
-      results, err := db.Query("SELECT msn FROM flightdata where Fuel_cap_l = ?", "msn", flightdata.Fuel_cap_l)
+      results, err := db.Query("SELECT msn FROM flightdata where Fuel_cap_l = ?", flightdata.Fuel_cap_l)
       if err != nil {
         log.Fatalln(err)
       }
@@ -230,7 +230,7 @@ func handleFlightDataSearchShow(w http.ResponseWriter, r *http.Request) {
     }
     
     if flightdata.Max_att != "" {
-      results, err := db.Query("SELECT msn FROM flightdata where Max_att = ?", "msn", flightdata.Max_att)
+      results, err := db.Query("SELECT msn FROM flightdata where Max_att = ?",  flightdata.Max_att)
       if err != nil {
         log.Fatalln(err)
       }
@@ -243,7 +243,7 @@ func handleFlightDataSearchShow(w http.ResponseWriter, r *http.Request) {
     }
     
     if flightdata.Flight_num != "" {
-      results, err := db.Query("SELECT msn FROM flightdata where Flight_num = ?", "msn", flightdata.Flight_num)
+      results, err := db.Query("SELECT msn FROM flightdata where Flight_num = ?", flightdata.Flight_num)
       if err != nil {
         log.Fatalln(err)
       }
