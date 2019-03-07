@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+   <style>
+   #cardcust{
+     
+     width: 60%;
+     margin: 20px auto;
+   }
+     .mdl-textfield__input{
+       width: 100%;
+     }
+  </style>
+    <title>Flight Data</title>
+</head>
+<body>
+  
+  
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Airbus Flightdata Program {{.}}</span>
+   <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+      <a class="mdl-navigation__link" href="/">Home</a>
+        <a class="mdl-navigation__link" href="/flightdata?program=A320">A320</a>
+        <a class="mdl-navigation__link" href="/flightdata?program=A330">A330</a>
+        <a class="mdl-navigation__link" href="/flightdata?program=A350">A350</a>
+        <a class="mdl-navigation__link" href="/flightsearch/">Search and Filter</a>
+    </nav>
+    </div>
+    </header>
+  <main class="mdl-layout__content">
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp" id = "cardcust">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Enter Program {{.}} Details</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <form action="/flightdata/" method="post">
+    <input type="hidden" name="pname" value="{{.}}">
+    
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="msn">
+      <label class="mdl-textfield__label" >MSN</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input  class="mdl-textfield__input" type="text" name="lengtn">
+      <label class="mdl-textfield__label" >Harness Length</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">      
+      <input class="mdl-textfield__input" type="text" name="weight">
+      <label class="mdl-textfield__label" >Gross Weight</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">      
+      <input class="mdl-textfield__input" type="text" name="atmp">
+      <label class="mdl-textfield__label" >Atmospheric Prersure</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">      
+      <input class="mdl-textfield__input" type="text" name="roomt">
+      <label class="mdl-textfield__label" >Room Temperature</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">      
+      <input class="mdl-textfield__input" type="text" name="airport">
+      <label class="mdl-textfield__label" >Airport</label>      
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">      
+      <input class="mdl-textfield__input" type="text" name="fcl">
+      <label class="mdl-textfield__label" >Fuel Capacity on Left Wing</label>            
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      
+      <input class="mdl-textfield__input" type="text" name="fcr">
+      <label class="mdl-textfield__label" >Fuel Capacity on right Wing:</label>            
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input"type="text" name="fql">     
+      <label class="mdl-textfield__label" >Fuel Quantity on Left Wing</label>            
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">      
+      <input class="mdl-textfield__input"type="text" name="fqr">
+      <label class="mdl-textfield__label" >Fuel Quantity on Right Wing</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input"type="text" name="maxat">
+      <label class="mdl-textfield__label" >Maximum Altitude to reached</label>      
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="flightno">
+      <label class="mdl-textfield__label" >Fligh Number</label>      
+     </div>
+      <br>
+      <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type = "submit" value = "Submit">        
+    </form>
+  </div>
+  
+</div>
+ 
+ 
+  
+  
+    </main>
+</body>
+</html>

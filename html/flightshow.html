@@ -7,18 +7,22 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <title>News Feed</title>
- <style>
+   <style>
    #cardcust{
      
-     width: 80%;
+     width: 60%;
      margin: 20px auto;
    }
+     .mdl-textfield__input{
+       width: 100%;
+     }
   </style>
+    <title>Flight Show</title>
 </head>
 <body>
+<body>
   
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
@@ -31,30 +35,38 @@
     </div>
     </header>
   <main class="mdl-layout__content">
-    {{range $i, $n := .}}
-    <div class="demo-card-wide mdl-card mdl-shadow--8dp" id="cardcust">
-    <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">{{$n.Headlines}}</h2>
+    
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp" id = "cardcust">
+  <h3>
+     FLight details
+  </h3>
+    
+      MSN: {{.Msn}}<br>
+      
+      Harness Length: {{.Harness_len}}<br>
+      
+      Gross Weight: {{.Gross_weight}}<br>
+      
+      Atmospheric Prersure: {{.Atms_pre}}<br>
+      
+      Room Temperature: {{.Room_temp}}<br>
+      
+      Airport: {{.Airport}}<br>
+      
+      Fuel Capacity on Left Wing: {{.Fuel_cap_r}}<br>
+   
+      Fuel Capacity on right Wing: {{.Fuel_cap_l}}<br>
+      
+      Fuel Quantity on Left Wing: {{.Fuel_quant_l}}<br>
+      
+      Fuel Quantity on Right Wing: {{.Fuel_quant_r}} <br>
+      
+      Maximum Altitude to reached:{{.Max_att}}<br>
+      
+      Flight No:{{.Flight_num}}<br>
     </div>
-    <div class="mdl-card__supporting-text">
-     {{$n.Content}}
-    </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-        Get Started
-      </a>
-    </div>
-    <div class="mdl-card__menu">
-      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-        <i class="material-icons">share</i>
-      </button>
-    </div>
+     </main>
   </div>
-    {{end}}
-    </main>
   
-
-  
- 
 </body>
 </html>
